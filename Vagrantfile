@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
     SHELL
   end
   
-  config.vm.define "haproxy1" do |haproxy2|
+  config.vm.define "haproxy2" do |haproxy2|
     haproxy2.vm.box = "ubuntu/xenial64"
     haproxy2.vm.network "private_network", virtualbox__intnet: "10.0.0.0/24", auto_config: false
     haproxy2.vm.network "private_network", virtualbox__intnet: "10.1.0.0/24", auto_config: false
