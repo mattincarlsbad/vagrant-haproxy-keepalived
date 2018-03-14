@@ -30,7 +30,7 @@ Vagrant.configure(2) do |config|
     server1.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig enp0s8 10.1.0.3/24
      apt-get update
-     apt-get install git vim -y
+     apt-get install git vim apache2 -y
     SHELL
   end
 
@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
     server2.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig enp0s8 10.1.0.4/24
      apt-get update
-     apt-get install git vim -y
+     apt-get install git vim apache2 -y
     SHELL
   end
 
