@@ -7,6 +7,8 @@ Vagrant.configure(2) do |config|
     haproxy1.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig enp0s8 10.0.0.1/24
      sudo ifconfig enp0s9 10.1.0.1/24
+     echo 'net.ipv4.ip_forward=1' | sudo tee -a /etc/sysctl.conf
+     sudo sysctl -p /etc/sysctl.conf
      apt-get update
      apt-get install git vim -y
     SHELL
@@ -19,6 +21,8 @@ Vagrant.configure(2) do |config|
     haproxy2.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig enp0s8 10.0.0.2/24
      sudo ifconfig enp0s9 10.1.0.2/24
+     echo 'net.ipv4.ip_forward=1' | sudo tee -a /etc/sysctl.conf
+     sudo sysctl -p /etc/sysctl.conf
      apt-get update
      apt-get install git vim -y
     SHELL
