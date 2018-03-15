@@ -31,6 +31,7 @@ Vagrant.configure(2) do |config|
      sudo ifconfig enp0s8 10.1.0.3/24
      apt-get update
      apt-get install git vim apache2 -y
+     route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.1.0.1
     SHELL
   end
 
@@ -41,6 +42,7 @@ Vagrant.configure(2) do |config|
      sudo ifconfig enp0s8 10.1.0.4/24
      apt-get update
      apt-get install git vim apache2 -y
+     route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.1.0.1
     SHELL
   end
 
@@ -52,6 +54,7 @@ Vagrant.configure(2) do |config|
      apt-get update
      apt-get install git vim -y
      git clone https://github.qualcomm.com/mattt/ansible-haproxy-keepalived
+     route add -net 10.1.0.0 netmask 255.255.255.0 gw 10.0.0.1
     SHELL
   end
  
