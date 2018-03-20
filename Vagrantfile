@@ -59,11 +59,10 @@ Vagrant.configure(2) do |config|
     ansible.vm.network "private_network", virtualbox__intnet: "10.0.0.0/24", auto_config: false
     ansible.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig eth1 10.0.0.20/24
-#     apt-get update
+     apt-get update
      apt-get install git vim -y
      wget -P .ssh/ "http://kook.qualcomm.com/haproxy/id_rsa"
-     chmod 400 .ssh/id_rsa
-     chown vagrant .ssh/id_rsa
+     chmod 400 .ssh/id_rsa && chown vagrant .ssh/id_rsa
      git clone https://github.qualcomm.com/mattt/ansible-haproxy-keepalived
      sudo route add -net 10.1.0.0 netmask 255.255.255.0 gw 10.0.0.1
     SHELL
