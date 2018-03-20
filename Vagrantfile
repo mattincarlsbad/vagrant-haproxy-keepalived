@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
      echo 'net.ipv4.ip_forward=1' | sudo tee -a /etc/sysctl.conf
      sudo sysctl -p /etc/sysctl.conf
  #    apt-get update
-     apt-get install git vim -y
+     apt-get install git vim python-minimal -y
     SHELL
   end
   
@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
      echo 'net.ipv4.ip_forward=1' | sudo tee -a /etc/sysctl.conf
      sudo sysctl -p /etc/sysctl.conf
  #    apt-get update
-     apt-get install git vim -y
+     apt-get install git vim python-minimal -y
     SHELL
   end
 
@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
     server1.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig enp0s8 10.1.0.3/24
  #    apt-get update
-     apt-get install git vim apache2 -y
+     apt-get install git vim apache2 python-minimal -y
      sudo route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.1.0.1
     SHELL
   end
@@ -49,7 +49,7 @@ Vagrant.configure(2) do |config|
     server2.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig enp0s8 10.1.0.4/24
 #     apt-get update
-     apt-get install git vim apache2 -y
+     apt-get install git vim apache2 python-minimal -y
      sudo route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.1.0.1
     SHELL
   end
