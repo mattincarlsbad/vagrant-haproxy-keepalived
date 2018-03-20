@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
   
   config.vm.define "haproxy2" do |haproxy2|
     haproxy2.vm.box = "ubuntu/xenial64"
-    haproxy1.ssh.insert_key = false
+    haproxy2.ssh.insert_key = false
     haproxy2.vm.network "private_network", virtualbox__intnet: "10.0.0.0/24", auto_config: false
     haproxy2.vm.network "private_network", virtualbox__intnet: "10.1.0.0/24", auto_config: false
     haproxy2.vm.provision "shell", inline: <<-SHELL
@@ -32,7 +32,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "server1" do |server1|
     server1.vm.box = "ubuntu/xenial64"
-    haproxy1.ssh.insert_key = false
+    server1.ssh.insert_key = false
     server1.vm.network "private_network", virtualbox__intnet: "10.1.0.0/24", auto_config: false
     server1.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig enp0s8 10.1.0.3/24
@@ -44,7 +44,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "server2" do |server2|
     server2.vm.box = "ubuntu/xenial64"
-    haproxy1.ssh.insert_key = false
+    server2.ssh.insert_key = false
     server2.vm.network "private_network", virtualbox__intnet: "10.1.0.0/24", auto_config: false
     server2.vm.provision "shell", inline: <<-SHELL
      sudo ifconfig enp0s8 10.1.0.4/24
