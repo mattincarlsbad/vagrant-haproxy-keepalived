@@ -64,7 +64,7 @@ Vagrant.configure(2) do |config|
      wget -P .ssh/ "https://github.com/hashicorp/vagrant/blob/master/keys/vagrant"
      cp ./ssh/vagrant ./ssh/id_rsa
      chmod 400 .ssh/id_rsa && chown vagrant .ssh/id_rsa
-     git clone https://github.qualcomm.com/mattt/ansible-haproxy-keepalived
+     git clone https://github.com/mattincarlsbad/ansible-haproxy-keepalived
      sudo chown -R vagrant ./ansible-haproxy-keepalived/
      sudo route add -net 10.1.0.0 netmask 255.255.255.0 gw 10.0.0.1
     SHELL
