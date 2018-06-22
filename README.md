@@ -31,7 +31,7 @@ The Vagrantfile in this repo will build the below network using Ubuntu 16.04 VMs
 3. Create a directory for running the vagrant-arista lab:
    ex: U:\vagrant\arista>
 4. Copy the "Vagrantfile" contents from this repo to the new directory. 
-   Using git: "git clone https://github.qualcomm.com/itnet-dc/vagrant-haproxy-keepalived"
+   Using git: "git clone https://github.com/mattincarlsbad/vagrant-haproxy-keepalived"
    Or just copy/paste.  Be sure to name the file "Vagrantfile".
 
 ## Vagrantup!
