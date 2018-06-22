@@ -61,7 +61,8 @@ Vagrant.configure(2) do |config|
      sudo ifconfig eth1 10.0.0.20/24
      apt-get update
      apt-get install git vim -y
-     wget -P .ssh/ "http://kook.qualcomm.com/haproxy/id_rsa"
+     wget -P .ssh/ "https://github.com/hashicorp/vagrant/blob/master/keys/vagrant"
+     cp ./ssh/vagrant ./ssh/id_rsa
      chmod 400 .ssh/id_rsa && chown vagrant .ssh/id_rsa
      git clone https://github.qualcomm.com/mattt/ansible-haproxy-keepalived
      sudo chown -R vagrant ./ansible-haproxy-keepalived/
